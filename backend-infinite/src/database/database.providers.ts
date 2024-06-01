@@ -11,7 +11,7 @@ export const databaseProviders = [
         port: 5432,
         username: 'postgres',
         password: '159817',
-        database: 'infinitewisdom',
+        database: 'infinity',
         entities: [
             __dirname + '/../**/*.entity{.ts,.js}',
         ],

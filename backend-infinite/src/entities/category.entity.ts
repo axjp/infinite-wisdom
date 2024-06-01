@@ -1,23 +1,14 @@
-/* eslint-disable prettier/prettier */
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { CategoryBook } from './categorybook.entity';
 
-@Entity()
-export class CategoryEntity {
+@Entity('category')
+export class Category {
   @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column({ length: 500 })
-  name: string;
-
-  @Column('text')
-  description: string;
+  idcategory: number;
 
   @Column()
-  filename: string;
+  category: string;
 
-  @Column('int')
-  views: number;
-
-  @Column()
-  isPublished: boolean;
+  @OneToMany(() => CategoryBook, categoryBook => categoryBook.category)
+  categoryBooks: CategoryBook[];
 }

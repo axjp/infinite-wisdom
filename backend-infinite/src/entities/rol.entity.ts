@@ -1,23 +1,14 @@
-/* eslint-disable prettier/prettier */
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { User } from './user.entity';
 
-@Entity()
-export class Photo {
+@Entity('role')
+export class Role {
   @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column({ length: 500 })
-  name: string;
-
-  @Column('text')
-  description: string;
+  idrol: number;
 
   @Column()
-  filename: string;
+  rol: string;
 
-  @Column('int')
-  views: number;
-
-  @Column()
-  isPublished: boolean;
+  @OneToMany(() => User, user => user.role)
+  users: User[];
 }
