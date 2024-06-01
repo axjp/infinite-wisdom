@@ -7,7 +7,7 @@ import { Customer } from './entities/customer.entity';
 import { Administrator } from './entities/administrator.entity';
 import { Gender } from './entities/gender.entity';
 import { City } from './entities/city.entity';
-import { Book } from './entities/book.entity';
+import { Book } from './entities/book.enitity';
 import { Download } from './entities/download.entity';
 import { Category } from './entities/category.entity';
 import { CategoryBook } from './entities/categorybook.entity';
