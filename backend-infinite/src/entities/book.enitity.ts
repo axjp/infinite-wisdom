@@ -1,18 +1,23 @@
-/* eslint-disable prettier/prettier */
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+} from 'typeorm';
+import { Loan } from './loan.entity';
+import { CategoryBook } from './categorybook.entity';
 
-@Entity()
-export class BookEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
 
-    @Column({ length: 500 })
-    name: string;
-    @Column({ type: 'varchar', name: 'editorial', length: '50', comment: 'Nombres del editorial' })
-    editorial: string;
+@Entity('books')
+export class Book {
+  @PrimaryGeneratedColumn()
+  idbooks: number;
 
-    @Column({ type: 'varchar', name: 'description', length: '100', comment: 'Descripcion del libro' })
-    description: string;
+  @Column({ type: 'varchar', length: 20 })
+  editorial: string;
+
+  @Column({ type: 'varchar', length: 255 })
+  description: string;
 
     @Column({ type: 'varchar', name: 'tittle', length: '40', comment: 'Titulo del libro' })
     tittle: string;
@@ -21,4 +26,32 @@ export class BookEntity {
 
 
 
+}
+
+  @Column({ type: 'varchar', length: 255 })
+  title: string;
+
+  @Column({ type: 'date' })
+  date: Date;
+
+  @Column({ type: 'varchar', length: 20 })
+  year: string;
+
+  @Column({ type: 'varchar', length: 255 })
+  pdfink: string;
+
+  @Column({ type: 'varchar', length: 20 })
+  nameauthor: string;
+
+  @Column({ type: 'varchar', length: 20 })
+  lastnameauthor: string;
+
+  @Column({ type: 'varchar', length: 255 })
+  image: string;
+
+  @Column({ type: 'boolean' })
+  bookstatus: boolean;
+
+  @OneToMany(() => Loan, (loan) => loan.book)
+  loans: Loan[];
 }

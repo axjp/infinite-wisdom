@@ -1,10 +1,9 @@
-/* eslint-disable prettier/prettier */
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('customer')
-export class CustomerEntity {
-@PrimaryGeneratedColumn('uuid')
-id:string;
+export class Customer {
+  @PrimaryGeneratedColumn()
+  idcustomer: number;
 
 @Column({type:'varchar',name:'first_najjjjjjjj', length:'10', comment:'Nombres del usuario'})
 name:string;
