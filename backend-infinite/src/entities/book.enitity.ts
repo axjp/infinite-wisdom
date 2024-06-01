@@ -3,10 +3,11 @@ import {
   PrimaryGeneratedColumn,
   Column,
   OneToMany,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
 import { Loan } from './loan.entity';
 import { CategoryBook } from './categorybook.entity';
-
 
 @Entity('books')
 export class Book {
@@ -45,4 +46,12 @@ export class Book {
 
   @OneToMany(() => Loan, (loan) => loan.book)
   loans: Loan[];
+
+  @ManyToMany(() => CategoryBook, (categoryBook) => categoryBook.books)
+  @JoinTable({
+    name: 'categorybook',
+    joinColumn: { name: 'idbooks', referencedColumnName: 'idbooks' },
+    inverseJoinColumn: { name: 'idcategorybook', referencedColumnName: 'idcategorybook' },
+  })
+  categoryBooks: CategoryBook[];
 }
