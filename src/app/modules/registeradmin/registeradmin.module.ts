@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { RegisteradminRoutingModule } from './registeradmin-routing.module';
 import { RegisteradminComponent } from './component/registeradmin.component';
@@ -11,7 +12,8 @@ import { RegisteradminComponent } from './component/registeradmin.component';
   ],
   imports: [
     CommonModule,
-    RegisteradminRoutingModule
+    RegisteradminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class RegisteradminModule { }
