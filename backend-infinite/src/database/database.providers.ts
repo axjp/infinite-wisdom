@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { DataSource } from 'typeorm';
 
 export const databaseProviders = [
@@ -9,7 +10,7 @@ export const databaseProviders = [
         host: 'localhost',
         port: 5432,
         username: 'postgres',
-        password: '1234',
+        password: '159817',
         database: 'infinitewisdom',
         entities: [
             __dirname + '/../**/*.entity{.ts,.js}',

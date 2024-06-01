@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from './database/database.module'; 
+import { DatabaseModule } from './database/database.module';
 import { customerProviders } from './providers/customer.providers';
 import { CustomerService } from './customer.service';
 

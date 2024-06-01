@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
+/* eslint-disable prettier/prettier */
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class BookEntity {
@@ -16,8 +17,8 @@ export class BookEntity {
     @Column({ type: 'varchar', name: 'tittle', length: '40', comment: 'Titulo del libro' })
     tittle: string;
 
-    
 
 
-  
+
+
 }

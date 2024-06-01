@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, Inject } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { CustomerEntity } from './entities/customer.entity'; 
+import { CustomerEntity } from './entities/customer.entity';
 
 @Injectable()
 export class CustomerService {
