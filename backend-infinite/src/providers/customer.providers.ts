@@ -1,6 +1,5 @@
-/* eslint-disable prettier/prettier */
 import { DataSource } from 'typeorm';
-import { Customer } from '../entities/customer.entity';
+import { Customer } from '../database/entities/customer.entity';
 
 export const customerProviders = [
   {

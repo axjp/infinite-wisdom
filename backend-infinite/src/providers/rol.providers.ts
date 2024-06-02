@@ -1,11 +1,10 @@
-/* eslint-disable prettier/prettier */
 import { DataSource } from 'typeorm';
-import { CustomerEntity } from 'src/entities/customer.entity';
+import { Rol } from '../database/entities/rol.entity';
 
-export const customerProviders = [
+export const rolProviders = [
   {
-    provide: 'PHOTO_REPOSITORY',
-    useFactory: (dataSource: DataSource) => dataSource.getRepository(CustomerEntity),
+    provide: 'ROL_REPOSITORY',
+    useFactory: (dataSource: DataSource) => dataSource.getRepository(Rol),
     inject: ['DATA_SOURCE'],
   },
 ];

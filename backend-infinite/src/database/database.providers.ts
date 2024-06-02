@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { DataSource } from 'typeorm';
 
 export const databaseProviders = [
@@ -12,10 +11,8 @@ export const databaseProviders = [
         username: 'postgres',
         password: '159817',
         database: 'infinity',
-        entities: [
-            __dirname + '/../**/*.entity{.ts,.js}',
-        ],
-        synchronize: false,
+        entities: [__dirname + '/../entities/*.entity{.ts,.js}'],
+        synchronize: true,
       });
 
       return dataSource.initialize();

@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm';
-import { CategoryBook } from '../entities/categorybook.entity';
+import { CategoryBook } from '../database/entities/categorybook.entity';
 
-export const categoryBookProviders = [
+export const categorybookProviders = [
   {
     provide: 'CATEGORYBOOK_REPOSITORY',
     useFactory: (dataSource: DataSource) => dataSource.getRepository(CategoryBook),

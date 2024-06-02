@@ -1,6 +1,5 @@
-/* eslint-disable prettier/prettier */
 import { DataSource } from 'typeorm';
-import { Book } from '../entities/book.entity';
+import { Book } from '../database/entities/book.entity';
 
 export const bookProviders = [
   {

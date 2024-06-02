@@ -1,17 +1,17 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmConfig } from './typeorm.config';
-import { User } from './entities/user.entity';
-import { Role } from './entities/role.entity';
-import { Customer } from './entities/customer.entity';
-import { Administrator } from './entities/administrator.entity';
-import { Gender } from './entities/gender.entity';
-import { City } from './entities/city.entity';
-import { Book } from './entities/book.enitity';
-import { Download } from './entities/download.entity';
-import { Category } from './entities/category.entity';
-import { CategoryBook } from './entities/categorybook.entity';
-import { Loan } from './entities/loan.entity';
+import { AdministratorModule } from './modules/administrator/administrator.module';
+import { BookModule } from './modules/book/book.module';
+import { CategoryModule } from './modules/category/category.module';
+import { CategoryBookModule } from './modules/categorybook/categorybook.module';
+import { CityModule } from './modules/city/city.module';
+import { CustomerModule } from './modules/customer/customer.module';
+import { GenderModule } from './modules/gender/gender.module';
+import { LoanModule } from './modules/loan/loan.module';
+import { ReviewModule } from './modules/review/review.module';
+import { RolModule } from './modules/rol/rol.module';
+import { UserModule } from './modules/user/user.module';
+import { DownloadModule } from './modules/download/dowload.module';
 
 @Module({
   imports: [
@@ -20,38 +20,23 @@ import { Loan } from './entities/loan.entity';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'yourpassword',
-      database: 'yourdatabase',
-      entities: [
-        User,
-        Role,
-        Customer,
-        Administrator,
-        Gender,
-        City,
-        Book,
-        Download,
-        Category,
-        CategoryBook,
-        Loan
-      ],
+      password: '159817',
+      database: 'infinity',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([
-      User,
-      Role,
-      Customer,
-      Administrator,
-      Gender,
-      City,
-      Book,
-      Download,
-      Category,
-      CategoryBook,
-      Loan
-    ]),
+    AdministratorModule,
+    BookModule,
+    CategoryModule,
+    CategoryBookModule,
+    CityModule,
+    CustomerModule,
+    DownloadModule,
+    GenderModule,
+    LoanModule,
+    ReviewModule,
+    RolModule,
+    UserModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}
