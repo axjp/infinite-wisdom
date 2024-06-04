@@ -1,17 +1,26 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 import { Customer } from './customer.entity';
 import { Book } from './book.entity';
 
-@Entity('review')
+@Entity('reviews')
 export class Review {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({name: 'idreview'})
   idreview: number;
-
-  @Column({ type: 'text' })
-  review: string;
 
   @Column({ type: 'int' })
   rating: number;
+
+  @Column({ type: 'text' })
+  comment: string;
+
+  @Column({ type: 'boolean' })
+  is_approved: boolean;
 
   @ManyToOne(() => Customer, (customer) => customer.reviews)
   @JoinColumn({ name: 'idcustomer' })
