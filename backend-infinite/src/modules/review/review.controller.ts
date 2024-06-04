@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { ReviewService } from './review.service';
 import { Review } from '../../database/entities/review.entity';
 
-@Controller('reviews')
+@Controller('review')
 export class ReviewController {
   constructor(private readonly reviewService: ReviewService) {}
 

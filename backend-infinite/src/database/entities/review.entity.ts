@@ -8,7 +8,7 @@ import {
 import { Customer } from './customer.entity';
 import { Book } from './book.entity';
 
-@Entity('reviews')
+@Entity('review')
 export class Review {
   @PrimaryGeneratedColumn()
   idreview: number;
