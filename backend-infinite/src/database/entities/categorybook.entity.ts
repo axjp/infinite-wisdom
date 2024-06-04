@@ -4,7 +4,7 @@ import { Book } from './book.entity';
 
 @Entity('categorybook')
 export class CategoryBook {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name:'idcategorynook' })
   idcategorybook: number;
 
   @ManyToOne(() => Category, (category) => category.idcategory)

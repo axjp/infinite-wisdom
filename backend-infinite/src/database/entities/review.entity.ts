@@ -10,7 +10,7 @@ import { Book } from './book.entity';
 
 @Entity('review')
 export class Review {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({name:'idreview'})
   idreview: number;
 
   @Column({ type: 'int' })

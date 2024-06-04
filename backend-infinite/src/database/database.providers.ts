@@ -13,7 +13,7 @@ export const databaseProviders = [
         database: 'infinity',
         entities: [__dirname + '/../entities/*.entity{.ts,.js}'],
         synchronize: true,
-        dropSchema: true,
+        dropSchema: false,
       });
 
       return dataSource.initialize();

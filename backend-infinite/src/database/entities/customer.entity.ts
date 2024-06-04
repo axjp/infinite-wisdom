@@ -5,7 +5,7 @@ import { User } from './user.entity';
 
 @Entity('customer')
 export class Customer {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name:'idcostumer' })
   idcustomer: number;
 
   @Column({ type: 'varchar', length: 20 })

@@ -10,7 +10,7 @@ import { Book } from './book.entity';
 
 @Entity('downloads')
 export class Download {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name:'iddownloads' })
   iddownloads: number;
 
   @Column({ type: 'date' })
