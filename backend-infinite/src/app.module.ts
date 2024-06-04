@@ -11,7 +11,6 @@ import { LoanModule } from './modules/loan/loan.module';
 import { ReviewModule } from './modules/review/review.module';
 import { RolModule } from './modules/rol/rol.module';
 import { UserModule } from './modules/user/user.module';
-import { DownloadModule } from './modules/download/dowload.module';
 
 @Module({
   imports: [
@@ -31,7 +30,6 @@ import { DownloadModule } from './modules/download/dowload.module';
     CategoryBookModule,
     CityModule,
     CustomerModule,
-    DownloadModule,
     GenderModule,
     LoanModule,
     ReviewModule,

@@ -6,7 +6,6 @@ import { Category } from './entities/category.entity';
 import { CategoryBook } from './entities/categorybook.entity';
 import { City } from './entities/city.entity';
 import { Customer } from './entities/customer.entity';
-import { Download } from './entities/download.entity';
 import { Gender } from './entities/gender.entity';
 import { Loan } from './entities/loan.entity';
 import { Review } from './entities/review.entity';
@@ -31,7 +30,6 @@ import { User } from './entities/user.entity';
           CategoryBook,
           City,
           Customer,
-          Download,
           Gender,
           Loan,
           Review,
