@@ -3,7 +3,7 @@ import { CategoryBook } from './categorybook.entity';
 
 @Entity('books')
 export class Book {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({name: 'idbook'})
   idbooks: number;
 
   @Column({ type: 'varchar', length: 20 })
