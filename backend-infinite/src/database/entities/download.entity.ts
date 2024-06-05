@@ -1,19 +1,13 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToOne,
-  JoinColumn,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { Customer } from './customer.entity';
 import { Book } from './book.entity';
 
 @Entity('downloads')
 export class Download {
-  @PrimaryGeneratedColumn({ name:'iddownloads' })
+  @PrimaryGeneratedColumn({ name: 'iddownloads' })
   iddownloads: number;
 
-  @Column({ type: 'date' })
+  @Column({ name: 'downloaddate', type: 'date' })
   download_date: Date;
 
   @ManyToOne(() => Customer, (customer) => customer.downloads)

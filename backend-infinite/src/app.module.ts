@@ -24,6 +24,7 @@ import { DownloadModule } from './modules/download/dowload.module';
       database: 'infinity',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      dropSchema:true
     }),
     AdministratorModule,
     BookModule,

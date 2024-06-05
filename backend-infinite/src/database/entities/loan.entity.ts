@@ -2,24 +2,24 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 't
 import { Customer } from './customer.entity';
 import { Book } from './book.entity';
 
-@Entity('loan')
+@Entity('loans')
 export class Loan {
   @PrimaryGeneratedColumn({ name: 'idloan' })
   idloan: number;
 
-  @Column({ type: 'date' })
+  @Column({ name: 'loandate', type: 'date' })
   loan_date: Date;
 
-  @Column({ type: 'date' })
+  @Column({ name: 'returndate', type: 'date' })
   return_date: Date;
 
-  @Column({ type: 'varchar', length: 255 })
+  @Column({ name: 'loancomments', type: 'varchar', length: 255 })
   comments: string;
 
-  @Column({ type: 'int' })
+  @Column({ name: 'loanamount', type: 'int' })
   loan_amount: number;
 
-  @Column({ type: 'boolean' })
+  @Column({ name: 'isapproved', type: 'boolean' })
   is_approved: boolean;
 
   @ManyToOne(() => Customer, (customer) => customer.loans)

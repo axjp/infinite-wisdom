@@ -1,17 +1,17 @@
 import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { Category } from './category.entity';
 import { Book } from './book.entity';
+import { Category } from './category.entity';
 
 @Entity('categorybook')
 export class CategoryBook {
-  @PrimaryGeneratedColumn({ name:'idcategorynook' })
+  @PrimaryGeneratedColumn({ name: 'idcategorybook' })
   idcategorybook: number;
 
-  @ManyToOne(() => Category, (category) => category.idcategory)
+  @ManyToOne(() => Book, (book) => book.categoryBooks)
+  @JoinColumn({ name: 'idbooks' })
+  book: Book;
+
+  @ManyToOne(() => Category, (category) => category.categoryBooks)
   @JoinColumn({ name: 'idcategory' })
   category: Category;
-
-  @ManyToOne(() => Book, (book) => book.idbooks)
-  @JoinColumn({ name: 'idbooks' })
-  books: Book;
 }

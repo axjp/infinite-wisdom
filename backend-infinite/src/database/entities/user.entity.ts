@@ -1,22 +1,21 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Customer } from './customer.entity';
+import { Administrator } from './administrator.entity';
 
-@Entity('user')
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn({ name: 'iduser' })
   iduser: number;
 
-  @Column({ type: 'varchar', length: 20 })
-  name: string;
+  @Column({ name: 'username', type: 'varchar', length: 20 })
+  username: string;
 
-  @Column({ type: 'varchar', length: 20 })
-  lastname: string;
-
-  @Column({ type: 'varchar', length: 50 })
-  email: string;
-
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ name: 'userpassword', type: 'varchar', length: 20 })
   password: string;
-  customers: any;
-  administrators: any;
-  username: any;
+
+  @OneToMany(() => Customer, (customer) => customer.user)
+  customers: Customer[];
+
+  @OneToMany(() => Administrator, (administrator) => administrator.user)
+  administrators: Administrator[];
 }

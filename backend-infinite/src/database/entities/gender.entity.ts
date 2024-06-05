@@ -1,11 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Customer } from './customer.entity';
 
-@Entity('gender')
+@Entity('genders')
 export class Gender {
   @PrimaryGeneratedColumn({ name: 'idgender' })
   idgender: number;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ name: 'gendername', type: 'varchar', length: 20 })
   gender: string;
-  customers: any;
+
+  @OneToMany(() => Customer, (customer) => customer.gender)
+  customers: Customer[];
 }

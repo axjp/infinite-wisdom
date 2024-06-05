@@ -1,10 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Administrator } from './administrator.entity';
 
-@Entity('rol')
+@Entity('rols')
 export class Rol {
   @PrimaryGeneratedColumn({ name: 'idrol' })
   idrol: number;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ name: 'rolname', type: 'varchar', length: 20 })
   rol: string;
+
+  @OneToMany(() => Administrator, (administrator) => administrator.rol)
+  administrators: Administrator[];
 }
