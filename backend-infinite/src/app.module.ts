@@ -23,6 +23,7 @@ import { UserModule } from './modules/user/user.module';
       database: 'infinity',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      dropSchema:true
     }),
     AdministratorModule,
     BookModule,

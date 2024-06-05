@@ -1,42 +1,41 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column,  OneToMany } from 'typeorm';
 import { CategoryBook } from './categorybook.entity';
+import { Loan } from './loan.entity';
+import { Review } from './review.entity';
+import { Download } from './download.entity';
 
 @Entity('books')
 export class Book {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name: 'idbooks' })
   idbooks: number;
 
-  @Column({ type: 'varchar', length: 20 })
-  editorial: string;
-
-  @Column({ type: 'text' })
-  description: string;
-
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ name: 'book_title', type: 'varchar', length: 255 })
   title: string;
 
-  @Column({ type: 'int' })
+  @Column({ name: 'book_author', type: 'varchar', length: 255 })
+  author: string;
+
+  @Column({ name: 'publication_year', type: 'int' })
   year: number;
 
-  @Column({ type: 'varchar', length: 100 })
-  pdfLink: string;
+  @Column({ name: 'book_description', type: 'text' })
+  description: string;
 
-  @Column({ type: 'varchar', length: 50 })
-  nameAuthor: string;
+  @Column({ name: 'book_publisher', type: 'varchar', length: 255 })
+  publisher: string;
 
-  @Column({ type: 'varchar', length: 50 })
-  lastNameAuthor: string;
+  @Column({ name: 'isbn_number', type: 'varchar', length: 20 })
+  isbn: string;
 
-  @Column({ type: 'varchar', length: 100 })
-  image: string;
+  @OneToMany(() => CategoryBook, (categoryBook) => categoryBook.book)
+  categoryBooks: CategoryBook[];
 
-  @Column({ type: 'boolean' })
-  bookStatus: boolean;
+  @OneToMany(() => Loan, (loan) => loan.book)
+  loans: Loan[];
 
-  @ManyToOne(() => CategoryBook, (categoryBook) => categoryBook.books)
-  @JoinColumn({ name: 'idcategorybook' })
-  categoryBook: CategoryBook;
-  loans: any;
-  reviews: any;
-  downloads: any;
+  @OneToMany(() => Review, (review) => review.book)
+  reviews: Review[];
+
+  @OneToMany(() => Download, (download) => download.book)
+  downloads: Download[];
 }

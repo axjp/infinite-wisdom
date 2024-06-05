@@ -1,10 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { CategoryBook } from './categorybook.entity';
 
-@Entity('category')
+@Entity('categories')
 export class Category {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name: 'idcategory' })
   idcategory: number;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ name: 'categoryname', type: 'varchar', length: 255 })
   category: string;
+
+  @OneToMany(() => CategoryBook, (categoryBook) => categoryBook.category)
+  categoryBooks: CategoryBook[];
 }

@@ -2,16 +2,19 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 't
 import { Customer } from './customer.entity';
 import { Book } from './book.entity';
 
-@Entity('review')
+@Entity('reviews')
 export class Review {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name: 'idreview' })
   idreview: number;
 
-  @Column({ type: 'text' })
-  review: string;
-
-  @Column({ type: 'int' })
+  @Column({ name: 'reviewrating', type: 'int' })
   rating: number;
+
+  @Column({ name: 'reviewcomment', type: 'text' })
+  comment: string;
+
+  @Column({ name: 'isapproved', type: 'boolean' })
+  is_approved: boolean;
 
   @ManyToOne(() => Customer, (customer) => customer.reviews)
   @JoinColumn({ name: 'idcustomer' })
