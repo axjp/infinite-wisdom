@@ -1,10 +1,10 @@
 import { DataSource } from 'typeorm';
-import { CustomerEntity } from 'src/entities/customer.entity';
+import { BookEntity } from 'src/entities/book.entity';
 
-export const customerProviders = [
+export const bookProviders = [
   {
-    provide: 'PHOTO_REPOSITORY',
-    useFactory: (dataSource: DataSource) => dataSource.getRepository(CustomerEntity),
+    provide: 'BOOK_REPOSITORY',
+    useFactory: (dataSource: DataSource) => dataSource.getRepository(BookEntity),
     inject: ['DATA_SOURCE'],
   },
 ];

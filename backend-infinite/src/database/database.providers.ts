@@ -10,11 +10,11 @@ export const databaseProviders = [
         port: 5432,
         username: 'postgres',
         password: '1234',
-        database: 'infinitewisdom',
+        database: 'user',
         entities: [
-            __dirname + '/../**/*.entity{.ts,.js}',
+          __dirname + '/../**/*.entity{.ts,.js}',
         ],
-        synchronize: false,
+        synchronize: true,
       });
 
       return dataSource.initialize();

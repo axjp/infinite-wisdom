@@ -1,22 +1,14 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from "typeorm";
+import { BookEntity } from "./book.entity";
 
-@Entity()
+@Entity('categories')
 export class CategoryEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+    @PrimaryGeneratedColumn('uuid')
+    idCategory: number;
 
-  @Column({ length: 500 })
-  name: string;
+    @Column({ type: 'varchar', length: 20, name: 'category', comment: 'Nombre de la categoría' })
+    category: string;
 
-  @Column('text')
-  description: string;
-
-  @Column()
-  filename: string;
-
-  @Column('int')
-  views: number;
-
-  @Column()
-  isPublished: boolean;
+    @ManyToMany(() => BookEntity, (book) => book.categories)
+    categories: CategoryEntity[];
 }
