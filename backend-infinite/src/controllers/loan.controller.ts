@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
-import { LoanService } from './loan.service';
-import { Loan } from '../../database/entities/loan.entity';
+import { LoanService } from '../services/loan.service';
+import { Loan } from '../entities/loan.entity';
 
 @Controller('loans')
 export class LoanController {

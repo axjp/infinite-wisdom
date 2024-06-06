@@ -11,11 +11,15 @@ export class Customer {
   @PrimaryGeneratedColumn({ name: 'idcustomer' })
   idcustomer: number;
 
-  @Column({ name: 'customername', type: 'varchar', length: 20 })
+  @Column({ name: 'customername', type: 'varchar', length: 20, comment: 'Ingresa el nombre' })
   name: string;
 
-  @Column({ name: 'customerlastname', type: 'varchar', length: 20 })
+  @Column({ name: 'customerlastname', type: 'varchar', length: 20,comment: 'Ingresa el apellido' })
   lastname: string;
+
+
+  @Column({ name: 'customeremail', type: 'varchar', length: 50 })
+  email: string;
 
   @ManyToOne(() => Gender, (gender) => gender.customers)
   @JoinColumn({ name: 'idgender' })

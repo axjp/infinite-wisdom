@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Rol } from '../database/entities/rol.entity';
+import { Rol } from '../entities/rol.entity';
 
 export const rolProviders = [
   {

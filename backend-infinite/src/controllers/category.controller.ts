@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
-import { CategoryService } from './category.service';
-import { Category } from '../../database/entities/category.entity';
+import { CategoryService } from '../services/category.service';
+import { Category } from '../entities/category.entity';
 
 @Controller('categories')
 export class CategoryController {

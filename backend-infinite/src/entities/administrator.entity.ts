@@ -13,6 +13,9 @@ export class Administrator {
   @Column({ name: 'adminlastname', type: 'varchar', length: 20 })
   lastname: string;
 
+  @Column({ name: 'adminlastname', type: 'varchar', length: 20 })
+  email: string;
+
   @ManyToOne(() => User, (user) => user.administrators)
   @JoinColumn({ name: 'iduser' })
   user: User;

@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
-import { CityService } from './city.service';
-import { City } from '../../database/entities/city.entity';
+import { CityService } from '../services/city.service';
+import { City } from '../entities/city.entity';
 
 @Controller('cities')
 export class CityController {

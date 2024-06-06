@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Gender } from '../database/entities/gender.entity';
+import { Gender } from '../entities/gender.entity';
 
 export const genderProviders = [
   {

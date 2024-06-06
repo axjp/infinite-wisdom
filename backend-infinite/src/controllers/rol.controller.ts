@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
-import { RolService } from './rol.service';
-import { Rol } from '../../database/entities/rol.entity';
+import { RolService } from '../services/rol.service';
+import { Rol } from '../entities/rol.entity';
 
 @Controller('roles')
 export class RolController {
