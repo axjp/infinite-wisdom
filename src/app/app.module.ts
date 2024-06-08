@@ -2,30 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './modulos/header/header.component';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { LoginComponent } from './modulos/login/login.component';
-import { MainComponent } from './modulos/main/main.component';
+import { LoginComponent } from './modules/login/component/login.component';
+import { MainComponent } from './modules/main/component/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './modulos/footer/footer.component';
-import { RegisterComponent } from './modulos/register/register.component';
-import { UploadComponent } from './upload/upload.component';
-import { RegisteradminComponent } from './modulos/registeradmin/registeradmin.component';
+import { RegisterComponent } from './modules/register/component/register.component';
+import { RegisteradminComponent } from './modules/registeradmin/component/registeradmin.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UsertablesComponent } from './modulos/usertables/usertables.component';
-import { AdmintablesComponent } from './modulos/admintables/admintables.component';
-import { BooktablesComponent } from './modulos/booktables/booktables.component';
-import { InfobookComponent } from './modulos/infobook/infobook.component';
+import { UsertablesComponent } from './modules/usertables/component/usertables.component';
+import { AdmintablesComponent } from './modules/admintables/component/admintables.component';
+import { BooktablesComponent } from './modules/booktables/component/booktables.component';
+import { InfobookComponent } from './modules/infobook/component/infobook.component';
+import { UploadComponent } from './modules/upload/component/upload.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     LoginComponent,
     MainComponent,
-    FooterComponent,
     RegisterComponent,
     UploadComponent,
     RegisteradminComponent,

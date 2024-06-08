@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { RestService } from '../rest.service';
+import { RestService } from '../../../service/rest.service';
 import { ActivatedRoute } from '@angular/router';
 
 

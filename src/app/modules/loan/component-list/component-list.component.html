@@ -1,0 +1,45 @@
+<div class="container">
+  <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="idloan">ID Loan</label>
+      <input type="number" id="idloan" formControlName="idloan" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="idbook">ID Book</label>
+      <input type="number" id="idbook" formControlName="idbook" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="idcustomer">ID Customer</label>
+      <input type="number" id="idcustomer" formControlName="idcustomer" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="loan_date">Loan Date</label>
+      <input type="date" id="loan_date" formControlName="loan_date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="return_days">Return Days</label>
+      <input type="number" id="return_days" formControlName="return_days" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="return_date">Return Date</label>
+      <input type="date" id="return_date" formControlName="return_date" class="form-control" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="checkbox" id="state" formControlName="state" class="form-check-input" [disabled]="true" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
