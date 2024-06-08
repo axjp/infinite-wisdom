@@ -13,23 +13,14 @@ export class LoanEntity {
     @ManyToOne(() => CustomerEntity, user => user.idCustomer, { onDelete: 'CASCADE' })
     idUser: CustomerEntity;
 
-    @Column({ type: 'varchar', length: 20, name: 'name', comment: 'Nombre del usuario' })
-    name: string;
-
-    @Column({ type: 'varchar', length: 20, name: 'lastname', comment: 'Apellido del usuario' })
-    lastname: string;
-
-    @Column({ type: 'varchar', length: 20, name: 'email', comment: 'Correo electrónico del usuario' })
+    @Column({ type: 'varchar', length: 50, name: 'email', comment: 'Correo electrónico del usuario' })
     email: string;
 
     @Column({ type: 'date', name: 'loan_date', comment: 'Fecha del préstamo' })
     loanDate: Date;
 
-    @Column({ type: 'date', name: 'return_date', comment: 'Fecha de devolución' })
-    returnDate: Date;
-
-    @Column({ type: 'integer', name: 'day_past_due', comment: 'Días de atraso' })
-    dayPastDue: number;
+    @Column({ type: 'integer', name: 'day_past_due', comment: 'Días de prestamo(maximo 10 días)'})
+    return_date: number;
 
     @Column({ type: 'boolean', name: 'state', comment: 'Estado del préstamo' })
     state: boolean;
