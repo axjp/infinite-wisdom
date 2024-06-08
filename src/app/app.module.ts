@@ -32,7 +32,9 @@ import { InfobookModule } from './modules/infobook/infobook.module';
 
 @NgModule({
   declarations: [
-    AppComponent],
+    AppComponent,
+  HeaderComponent,
+FooterComponent],
 
   imports: [
     CommonModule,
@@ -42,10 +44,10 @@ import { InfobookModule } from './modules/infobook/infobook.module';
     ReactiveFormsModule,
     HttpClientModule,
     UsertablesModule,
-    HeaderModule,
+
     LoginModule,
     MainModule,
-    FooterModule,
+    
     RegisterModule,
     UploadModule,
     RegisteradminModule,
