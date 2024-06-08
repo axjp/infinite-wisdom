@@ -1,17 +1,17 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
-import { BookEntity } from "./book.entity";
-import { CustomerEntity } from "./customer.entity";
+import { Book } from "./book.entity";
+import { Customer } from "./customer.entity";
 
 @Entity('loan')
 export class LoanEntity {
     @PrimaryGeneratedColumn({ type: 'integer', name: 'idloan', comment: 'ID del préstamo' })
     idLoan: number;
 
-    @ManyToOne(() => BookEntity, book => book.idBook, { onDelete: 'CASCADE' })
-    idBook: BookEntity;
+    @ManyToOne(() => Book, book => book.idbooks, { onDelete: 'CASCADE' })
+    idBook: Book;
 
-    @ManyToOne(() => CustomerEntity, user => user.idCustomer, { onDelete: 'CASCADE' })
-    idUser: CustomerEntity;
+    @ManyToOne(() => Customer, user => user.idcustomer, { onDelete: 'CASCADE' })
+    idUser: Customer;
 
     @Column({ type: 'varchar', length: 50, name: 'email', comment: 'Correo electrónico del usuario' })
     email: string;
@@ -24,4 +24,6 @@ export class LoanEntity {
 
     @Column({ type: 'boolean', name: 'state', comment: 'Estado del préstamo' })
     state: boolean;
+  customers: any;
+  book: any;
 }
