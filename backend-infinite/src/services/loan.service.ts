@@ -1,33 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Loan } from '../entities/loan.entity';
+import { LoanProvider } from '../providers/loan.providers';
+import { LoanEntity } from 'src/entities/loan.entity';
 
 @Injectable()
 export class LoanService {
-  constructor(
-    @InjectRepository(Loan)
-    private loanRepository: Repository<Loan>,
-  ) {}
+  constructor(private readonly loanProvider: LoanProvider) {}
 
-  findAll(): Promise<Loan[]> {
-    return this.loanRepository.find();
+  // Método para obtener todos los préstamos
+  async getAllLoans(): Promise<LoanEntity[]> {
+    return this.loanProvider.getAllLoans();
   }
 
-  findOne(id: number): Promise<Loan> {
-    return this.loanRepository.findOne({ where: { idloan: id } });
+  // Método para obtener un préstamo por su id
+  async getLoanById(id: number): Promise<LoanEntity | undefined> {
+    return this.loanProvider.getLoanById(id);
   }
 
-  create(loan: Loan): Promise<Loan> {
-    return this.loanRepository.save(loan);
+  // Método para crear un nuevo préstamo
+  async createLoan(loan: LoanEntity): Promise<LoanEntity> {
+    return this.loanProvider.createLoan(loan);
   }
 
-  async update(id: number, loan: Loan): Promise<Loan> {
-    await this.loanRepository.update(id, loan);
-    return this.loanRepository.findOne({ where: { idloan: id } });
+  // Método para actualizar un préstamo existente
+  async updateLoan(id: number, loan: LoanEntity): Promise<LoanEntity> {
+    return this.loanProvider.updateLoan(id, loan);
   }
 
-  async remove(id: number): Promise<void> {
-    await this.loanRepository.delete(id);
+  // Método para eliminar un préstamo
+  async deleteLoan(id: number): Promise<void> {
+    return this.loanProvider.deleteLoan(id);
   }
 }
