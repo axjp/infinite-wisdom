@@ -1,32 +1,27 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Customer } from './customer.entity';
-import { Book } from './book.entity';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { BookEntity } from "./book.entity";
+import { CustomerEntity } from "./customer.entity";
 
-@Entity('loans')
-export class Loan {
-  @PrimaryGeneratedColumn({ name: 'idloan' })
-  idloan: number;
+@Entity('loan')
+export class LoanEntity {
+    @PrimaryGeneratedColumn({ type: 'integer', name: 'idloan', comment: 'ID del préstamo' })
+    idLoan: number;
 
-  @Column({ name: 'loandate', type: 'date' })
-  loan_date: Date;
+    @ManyToOne(() => BookEntity, book => book.idBook, { onDelete: 'CASCADE' })
+    idBook: BookEntity;
 
-  @Column({ name: 'returndate', type: 'date' })
-  return_date: Date;
+    @ManyToOne(() => CustomerEntity, user => user.idCustomer, { onDelete: 'CASCADE' })
+    idUser: CustomerEntity;
 
-  @Column({ name: 'loancomments', type: 'varchar', length: 255 })
-  comments: string;
+    @Column({ type: 'varchar', length: 50, name: 'email', comment: 'Correo electrónico del usuario' })
+    email: string;
 
-  @Column({ name: 'loanamount', type: 'int' })
-  loan_amount: number;
+    @Column({ type: 'date', name: 'loan_date', comment: 'Fecha del préstamo' })
+    loanDate: Date;
 
-  @Column({ name: 'isapproved', type: 'boolean' })
-  is_approved: boolean;
+    @Column({ type: 'integer', name: 'day_past_due', comment: 'Días de prestamo(maximo 10 días)'})
+    return_date: number;
 
-  @ManyToOne(() => Customer, (customer) => customer.loans)
-  @JoinColumn({ name: 'idcustomer' })
-  customer: Customer;
-
-  @ManyToOne(() => Book, (book) => book.loans)
-  @JoinColumn({ name: 'idbooks' })
-  book: Book;
+    @Column({ type: 'boolean', name: 'state', comment: 'Estado del préstamo' })
+    state: boolean;
 }
