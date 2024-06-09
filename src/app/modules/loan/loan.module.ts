@@ -16,6 +16,9 @@ import { LoanService } from '../../service/loan/loan.service';
     ReactiveFormsModule,
     LoanRoutingModule
   ],
-  providers: [LoanService]
+  providers: [LoanService],
+
+  exports: [
+     LoanComponent]
 })
 export class LoanModule { }

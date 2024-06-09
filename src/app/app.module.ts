@@ -28,6 +28,7 @@ import { AdmintablesModule } from './modules/admintables/admintables.module';
 import { BooktablesModule } from './modules/booktables/booktables.module';
 import { InfobookModule } from './modules/infobook/infobook.module';
 import { ReviewsModule } from './modules/reviews/reviews.module';
+import { LoanModule } from './modules/loan/loan.module';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { ReviewsModule } from './modules/reviews/reviews.module';
     InfobookModule,
     HeaderModule,
     ReviewsModule,
+    LoanModule,
   FooterModule  ],
   providers:[],
   bootstrap:[AppComponent]
