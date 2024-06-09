@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-usertables',
   templateUrl: './usertables.component.html',
-  styleUrl: './usertables.component.css'
+  styleUrls: ['./usertables.component.scss']
 })
 export class UsertablesComponent {
   customers: any = null;

@@ -9,22 +9,22 @@ export class Book {
   @PrimaryGeneratedColumn({ name: 'idbooks' })
   idbooks: number;
 
-  @Column({ name: 'book_title', type: 'varchar', length: 255 })
+  @Column({ name: 'booktitle', type: 'varchar', length: 255 })
   title: string;
 
-  @Column({ name: 'book_author', type: 'varchar', length: 255 })
+  @Column({ name: 'bookauthor', type: 'varchar', length: 255 })
   author: string;
 
   @Column({ name: 'publication_year', type: 'int' })
   year: number;
 
-  @Column({ name: 'book_description', type: 'text' })
+  @Column({ name: 'bookdescription', type: 'text' })
   description: string;
 
-  @Column({ name: 'book_publisher', type: 'varchar', length: 255 })
+  @Column({ name: 'bookpublisher', type: 'varchar', length: 255 })
   publisher: string;
 
-  @Column({ name: 'isbn_number', type: 'varchar', length: 20 })
+  @Column({ name: 'isbnnumber', type: 'varchar', length: 20 })
   isbn: string;
 
   @OneToMany(() => CategoryBook, (categoryBook) => categoryBook.book)

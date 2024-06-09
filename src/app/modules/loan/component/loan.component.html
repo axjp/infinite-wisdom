@@ -1,1 +1,25 @@
-<p>loan works!</p>
+<div class="container">
+    <h2>Loan List</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Loan Date</th>
+          <th>Return Days</th>
+          <th>Email</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let loan of loans$ | async">
+          <td>{{ loan.loan_date }}</td>
+          <td>{{ loan.return_date }}</td>
+          <td>{{ loan.email }}</td>
+          <td>
+            <span [ngClass]="{'text-success': loan.state, 'text-danger': !loan.state}">
+              {{ loan.state ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

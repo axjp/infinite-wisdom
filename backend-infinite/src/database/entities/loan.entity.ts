@@ -30,3 +30,4 @@ export class Loan {
   @JoinColumn({ name: 'idbooks' })
   book: Book;
 }
+

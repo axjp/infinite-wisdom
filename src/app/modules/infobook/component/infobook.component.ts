@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-infobook',
   templateUrl: './infobook.component.html',
-  styleUrl: './infobook.component.css'
+  styleUrls: ['./infobook.component.scss']
 })
 export class InfobookComponent {
 books: any=null

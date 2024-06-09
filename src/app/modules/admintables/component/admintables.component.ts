@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-admintables',
   templateUrl: './admintables.component.html',
-  styleUrl: './admintables.component.css'
+  styleUrls: ['./admintables.component.scss']
 })
 export class AdmintablesComponent {
   administrators: any = null;

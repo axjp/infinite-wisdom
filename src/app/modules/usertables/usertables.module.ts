@@ -12,6 +12,10 @@ import { UsertablesComponent } from './component/usertables.component';
   imports: [
     CommonModule,
     UsertablesRoutingModule
+  ],
+  exports:[
+    UsertablesComponent
+
   ]
 })
 export class UsertablesModule { }

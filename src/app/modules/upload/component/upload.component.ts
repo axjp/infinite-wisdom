@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { RestService } from '../rest.service';
+
 import { ActivatedRoute } from '@angular/router';
+import { RestService } from '../../../service/rest.service';
 
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrl: './upload.component.css'
+  styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent {
   protected form: FormGroup;
@@ -21,7 +22,7 @@ export class UploadComponent {
   constructor(
     private formBuilder: FormBuilder,
     private httpClient: HttpClient,
-    private restServie: RestService,
+    private RestService: RestService,
     private route: ActivatedRoute,
   ) {
     this.form = this.formBuilder.group({

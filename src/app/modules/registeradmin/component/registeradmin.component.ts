@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-registeradmin',
   templateUrl: './registeradmin.component.html',
-  styleUrl: './registeradmin.component.css'
+  styleUrls: ['./registeradmin.component.scss']
 })
 export class RegisteradminComponent {
   protected form: FormGroup;

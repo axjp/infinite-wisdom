@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LoanService } from '../services/loan.service';
 
 @Component({
   selector: 'app-loan',
   templateUrl: './loan.component.html',
-  styleUrl: './loan.component.scss'
+  styleUrls: ['./loan.component.css']
 })
-export class LoanComponent {
+export class LoanComponent implements OnInit {
+  loans$: Observable<any[]>;
 
+  constructor(private loanService: LoanService) {
+    this.loans$ = this.loanService.loans$;
+  }
+
+  ngOnInit(): void {}
 }

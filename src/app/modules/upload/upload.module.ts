@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { UploadRoutingModule } from './upload-routing.module';
 import { UploadComponent } from './component/upload.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    UploadComponent,
+    UploadComponent
   ],
   imports: [
     CommonModule,
-    UploadRoutingModule
+    HttpClientModule
+  ],
+  exports: [
+    UploadComponent
   ]
 })
 export class UploadModule { }

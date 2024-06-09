@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-booktables',
   templateUrl: './booktables.component.html',
-  styleUrl: './booktables.component.css'
+  styleUrls: ['./booktables.component.scss']
 })
 export class BooktablesComponent {
 books: any= null;

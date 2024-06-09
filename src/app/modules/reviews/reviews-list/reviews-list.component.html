@@ -1,0 +1,12 @@
+<div class="reviews-list">
+  <h2>Reviews List</h2>
+  <ul>
+    <li *ngFor="let review of reviews">
+      <p><strong>Rating:</strong> {{ review.rating }}</p>
+      <p><strong>Comment:</strong> {{ review.comment }}</p>
+      <p><strong>Approved:</strong> {{ review.is_approved }}</p>
+      <p><strong>Customer ID:</strong> {{ review.idcustomer }}</p>
+      <p><strong>Book ID:</strong> {{ review.idbooks }}</p>
+    </li>
+  </ul>
+</div>
