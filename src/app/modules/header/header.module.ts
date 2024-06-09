@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderRoutingModule } from './header-routing.module';
 import { HeaderComponent } from './component/header.component';
+import { AppComponent } from '../../app.component';
 
 
 @NgModule({
@@ -15,4 +16,5 @@ import { HeaderComponent } from './component/header.component';
   ],
   exports: [HeaderComponent]
 })
+
 export class HeaderModule { }

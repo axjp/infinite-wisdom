@@ -5,6 +5,7 @@ import { ReviewsComponent } from './component/reviews.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 import { ReviewsRoutingModule } from './reviews-routing.module';
 import { ReviewsService } from '../../service/reviews.service';
+import { AppComponent } from '../../app.component';
 
 
 @NgModule({

@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMan
 import { Gender } from './gender.entity';
 import { User } from './user.entity';
 import { City } from './city.entity';
-import { LoanEntity } from './loan.entity';
+import { Loan } from './loan.entity';
 import { Review } from './review.entity';
 import { Download } from './download.entity';
 
@@ -33,8 +33,8 @@ export class Customer {
   @JoinColumn({ name: 'idcity' })
   city: City;
 
-  @OneToMany(() => LoanEntity, (loan) => loan.customers)
-  loans: LoanEntity[];
+  @OneToMany(() => Loan, (loan) => loan.customers)
+  loans: Loan[];
 
   @OneToMany(() => Review, (review) => review.customer)
   reviews: Review[];

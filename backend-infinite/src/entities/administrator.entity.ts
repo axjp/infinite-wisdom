@@ -13,7 +13,7 @@ export class Administrator {
   @Column({ name: 'adminlastname', type: 'varchar', length: 20 })
   lastname: string;
 
-  @Column({ name: 'adminlastname', type: 'varchar', length: 20 })
+  @Column({ name: 'adminemail', type: 'varchar', length: 20 })
   email: string;
 
   @ManyToOne(() => User, (user) => user.administrators)
