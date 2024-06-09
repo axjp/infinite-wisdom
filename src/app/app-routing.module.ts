@@ -9,6 +9,8 @@ import { UsertablesComponent } from './modules/usertables/component/usertables.c
 import { AdmintablesComponent } from './modules/admintables/component/admintables.component';
 import { BooktablesComponent } from './modules/booktables/component/booktables.component';
 import { InfobookComponent } from './modules/infobook/component/infobook.component';
+import { ReviewsComponent } from './modules/reviews/component/reviews.component';
+import { ReviewsListComponent } from './modules/reviews/reviews-list/reviews-list.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -20,7 +22,7 @@ const routes: Routes = [
   { path: 'admintables', component: AdmintablesComponent },
   { path: 'booktables', component: BooktablesComponent },
   { path: 'infobook', component: InfobookComponent },
-  { path: 'reviews', loadChildren: () => import('./modules/reviews/reviews.module').then(m => m.ReviewsModule) },
+  { path: 'reviews', component: ReviewsListComponent}
 ];
 
 @NgModule({
