@@ -31,7 +31,6 @@ import { ReviewsModule } from './modules/reviews/reviews.module';
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent],
   declarations: [
     AppComponent
 
@@ -47,16 +46,11 @@ import { ReviewsModule } from './modules/reviews/reviews.module';
     UsertablesModule,
     LoginModule,
     MainModule,
-    FooterModule,
     RegisterModule,
     UploadModule,
     RegisteradminModule,
     AdmintablesModule,
     BooktablesModule,
-    InfobookModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
     InfobookModule,
     HeaderModule,
     ReviewsModule,

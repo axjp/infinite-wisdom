@@ -5,7 +5,7 @@ import { LoanService } from '../../../service/loan/loan.service';
 @Component({
   selector: 'app-loan',
   templateUrl: './loan.component.html',
-  styleUrls: ['./loan.component.css']
+  styleUrls: ['./loan.component.scss']
 })
 export class LoanComponent implements OnInit {
   loans$: Observable<any[]>;

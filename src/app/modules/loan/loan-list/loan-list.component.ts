@@ -5,7 +5,7 @@ import { LoanService } from '../../../service/loan/loan.service';
 @Component({
   selector: 'app-loan-list',
   templateUrl: './loan-list.component.html',
-  styleUrls: ['./loan-list.component.css']
+  styleUrls: ['./loan-list.component.scss']
 })
 export class LoanListComponent implements OnInit {
   loanForm: FormGroup;

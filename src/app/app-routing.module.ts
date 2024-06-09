@@ -11,6 +11,7 @@ import { BooktablesComponent } from './modules/booktables/component/booktables.c
 import { InfobookComponent } from './modules/infobook/component/infobook.component';
 import { ReviewsComponent } from './modules/reviews/component/reviews.component';
 import { ReviewsListComponent } from './modules/reviews/reviews-list/reviews-list.component';
+import { LoanComponent } from './modules/loan/component/loan.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'admintables', component: AdmintablesComponent },
   { path: 'booktables', component: BooktablesComponent },
   { path: 'infobook', component: InfobookComponent },
-  { path: 'reviews', component: ReviewsListComponent}
+  { path: 'reviews', component: ReviewsListComponent},
+  { path: 'loan', component: LoanComponent}
+
 ];
 
 @NgModule({
