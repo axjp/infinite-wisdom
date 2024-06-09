@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReviewsListComponent } from './reviews-list/reviews-list.component'; // Importa tu componente
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReviewsComponent } from './component/reviews.component';
+import { ReviewsListComponent } from './reviews-list/reviews-list.component';
+import { ReviewsRoutingModule } from './reviews-routing.module';
+import { ReviewsService } from '../../service/reviews.service';
+
 
 @NgModule({
   declarations: [
-    ReviewsListComponent // Declara tu componente aquí
+    ReviewsComponent,
+    ReviewsListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    ReviewsRoutingModule
   ],
-  exports: [
-    ReviewsListComponent // Exporta tu componente si es necesario
-  ]
+  providers: [ReviewsService]
 })
 export class ReviewsModule { }

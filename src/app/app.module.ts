@@ -17,6 +17,7 @@ import { RegisteradminModule } from './modules/registeradmin/registeradmin.modul
 import { AdmintablesModule } from './modules/admintables/admintables.module';
 import { BooktablesModule } from './modules/booktables/booktables.module';
 import { InfobookModule } from './modules/infobook/infobook.module';
+import { ReviewsModule } from './modules/reviews/reviews.module';
 
 // Declaraciones
 import { AppComponent } from './app.component';
@@ -24,7 +25,15 @@ import { HeaderComponent } from './modules/header/component/header.component';
 import { FooterComponent } from './modules/footer/component/footer.component';
 
 @NgModule({
+<<<<<<< HEAD
   declarations: [AppComponent, HeaderComponent, FooterComponent],
+=======
+  declarations: [
+    AppComponent
+
+],
+
+>>>>>>> origin/pinsag-juan
   imports: [
     CommonModule,
     AppRoutingModule,
@@ -35,15 +44,27 @@ import { FooterComponent } from './modules/footer/component/footer.component';
     UsertablesModule,
     LoginModule,
     MainModule,
+<<<<<<< HEAD
     FooterModule,
+=======
+>>>>>>> origin/pinsag-juan
     RegisterModule,
     UploadModule,
     RegisteradminModule,
     AdmintablesModule,
     BooktablesModule,
+<<<<<<< HEAD
     InfobookModule
   ],
   providers: [],
   bootstrap: [AppComponent]
+=======
+    InfobookModule,
+    HeaderModule,
+    ReviewsModule,
+  FooterModule  ],
+  providers:[],
+  bootstrap:[AppComponent]
+>>>>>>> origin/pinsag-juan
 })
 export class AppModule {}

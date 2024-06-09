@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { ReviewsService } from '../../../service/reviews.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ReviewsService } from '../../../service/reviews.service';
 export class ReviewsComponent implements OnInit {
   reviewForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private reviewService: ReviewsService) {
+  constructor(private fb: FormBuilder, private ReviewsService: ReviewsService) {
     this.reviewForm = this.fb.group({
       rating: [null, [Validators.required, Validators.min(1), Validators.max(5)]],
       comment: ['', Validators.required],
@@ -24,7 +25,7 @@ export class ReviewsComponent implements OnInit {
 
   onSubmit(): void {
     if (this.reviewForm.valid) {
-      this.reviewService.createReview(this.reviewForm.value).subscribe(
+      this.ReviewsService.createReview(this.reviewForm.value).subscribe(
         response => {
           console.log('Review created successfully!', response);
         },
