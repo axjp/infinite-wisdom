@@ -1,28 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReviewsListComponent } from './reviews-list.component';
+import { Component, OnInit } from '@angular/core';
 
-describe('ReviewsListComponent', () => {
-  let component: ReviewsListComponent;
-  let fixture: ComponentFixture<ReviewsListComponent>;
+import { ReviewsService } from '../../../service/reviews.service';
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ReviewsListComponent ]
-    })
-    .compileComponents();
-  });
+@Component({
+  selector: 'app-reviews-list',
+  templateUrl: './reviews-list.component.html',
+  styleUrls: ['./reviews-list.component.scss']
+})
+export class ReviewsListComponent implements OnInit {
+  reviews: any[] = [];
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ReviewsListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  constructor(private ReviewsService: ReviewsService) { }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
-
-export { ReviewsListComponent };
-
-
+  ngOnInit(): void {
+    this.ReviewsService.getReviews().subscribe(
+      data => {
+        this.reviews = data;
+      },
+      error => {
+        console.error('Error fetching reviews', error);
+      }
+    );
+  }
+}

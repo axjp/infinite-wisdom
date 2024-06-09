@@ -28,13 +28,14 @@ import { RegisteradminModule } from './modules/registeradmin/registeradmin.modul
 import { AdmintablesModule } from './modules/admintables/admintables.module';
 import { BooktablesModule } from './modules/booktables/booktables.module';
 import { InfobookModule } from './modules/infobook/infobook.module';
+import { ReviewsModule } from './modules/reviews/reviews.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-  HeaderComponent,
-FooterComponent],
+    AppComponent
+
+],
 
   imports: [
     CommonModule,
@@ -44,17 +45,17 @@ FooterComponent],
     ReactiveFormsModule,
     HttpClientModule,
     UsertablesModule,
-
     LoginModule,
     MainModule,
-    
     RegisterModule,
     UploadModule,
     RegisteradminModule,
     AdmintablesModule,
     BooktablesModule,
-    InfobookModule
-  ],
+    InfobookModule,
+    HeaderModule,
+    ReviewsModule,
+  FooterModule  ],
   providers:[],
   bootstrap:[AppComponent]
 })
