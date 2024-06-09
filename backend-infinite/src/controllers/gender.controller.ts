@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
-import { GenderService } from './gender.service';
-import { Gender } from '../../database/entities/gender.entity';
+import { GenderService } from '../services/gender.service';
+import { Gender } from '../entities/gender.entity';
 
 @Controller('genders')
 export class GenderController {

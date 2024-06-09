@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Download } from '../database/entities/download.entity';
+import { Download } from '../entities/download.entity';
 
 export const downloadProviders = [
   {

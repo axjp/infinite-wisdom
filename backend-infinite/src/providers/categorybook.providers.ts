@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { CategoryBook } from '../database/entities/categorybook.entity';
+import { CategoryBook } from '../entities/categorybook.entity';
 
 export const categorybookProviders = [
   {

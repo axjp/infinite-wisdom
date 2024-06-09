@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { GenderService } from './gender.service';
-import { GenderController } from './gender.controller';
-import { Gender } from '../../database/entities/gender.entity';
+import { GenderService } from '../../services/gender.service';
+import { GenderController } from '../../controllers/gender.controller';
+import { Gender } from '../../entities/gender.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Gender])],

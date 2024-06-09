@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
-import { DownloadService } from './download.service';
-import { Download } from '../../database/entities/download.entity';
+import { DownloadService } from '../services/download.service';
+import { Download } from '../entities/download.entity';
 
 @Controller('downloads')
 export class DownloadController {

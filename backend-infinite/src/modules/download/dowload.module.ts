@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DownloadService } from './download.service';
-import { DownloadController } from './download.controller';
-import { Download } from '../../database/entities/download.entity';
+import { DownloadService } from '../../services/download.service';
+import { DownloadController } from '../../controllers/download.controller';
+import { Download } from '../../entities/download.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Download])],

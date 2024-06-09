@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column,  OneToMany } from 'typeorm';
 import { CategoryBook } from './categorybook.entity';
-import { Loan } from './loan.entity';
+import { LoanEntity } from './loan.entity';
 import { Review } from './review.entity';
 import { Download } from './download.entity';
 
@@ -30,8 +30,8 @@ export class Book {
   @OneToMany(() => CategoryBook, (categoryBook) => categoryBook.book)
   categoryBooks: CategoryBook[];
 
-  @OneToMany(() => Loan, (loan) => loan.book)
-  loans: Loan[];
+  @OneToMany(() => LoanEntity, (loan) => loan.book)
+  loans: LoanEntity[];
 
   @OneToMany(() => Review, (review) => review.book)
   reviews: Review[];

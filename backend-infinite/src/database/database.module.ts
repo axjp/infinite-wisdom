@@ -1,17 +1,17 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { Book } from './entities/book.entity';
-import { Category } from './entities/category.entity';
-import { CategoryBook } from './entities/categorybook.entity';
-import { City } from './entities/city.entity';
-import { Customer } from './entities/customer.entity';
-import { Download } from './entities/download.entity';
-import { Gender } from './entities/gender.entity';
-import { Loan } from './entities/loan.entity';
-import { Review } from './entities/review.entity';
-import { Rol } from './entities/rol.entity';
-import { User } from './entities/user.entity';
+import { Book } from '../entities/book.entity';
+import { Category } from '../entities/category.entity';
+import { CategoryBook } from '../entities/categorybook.entity';
+import { City } from '../entities/city.entity';
+import { Customer } from '../entities/customer.entity';
+import { Download } from '../entities/download.entity';
+import { Gender } from '../entities/gender.entity';
+import { Loan } from '../entities/loan.entity';
+import { Review } from '../entities/review.entity';
+import { Rol } from '../entities/rol.entity';
+import { User } from '../entities/user.entity';
 
 @Module({
   imports: [
