@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LoanService } from '../../../service/loan/loan.service';
+import { LoanService } from '../../../service/loan.service';
 
 @Component({
   selector: 'app-loan',

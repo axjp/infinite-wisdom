@@ -18,9 +18,9 @@ import { DownloadModule } from './modules/download/dowload.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5434,
+      port: 5432,
       username: 'postgres',
-      password: '1234',
+      password: '159817',
       database: 'infinity',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,

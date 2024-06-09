@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'admintables', component: AdmintablesComponent },
   { path: 'booktables', component: BooktablesComponent },
   { path: 'infobook', component: InfobookComponent },
-  { path: 'reviews', component: ReviewsListComponent},
+  { path: 'reviews-list', component: ReviewsListComponent},
+  { path: 'reviews', component: ReviewsComponent},
   { path: 'loan', component: LoanComponent}
 
 ];

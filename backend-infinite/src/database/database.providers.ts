@@ -7,9 +7,9 @@ export const databaseProviders = [
       const dataSource = new DataSource({
         type: 'postgres',
         host: 'localhost',
-        port: 5434,
+        port: 5432,
         username: 'postgres',
-        password: '1234',
+        password: '159817',
         database: 'infinity',
         entities: [__dirname + '/../entities/*.entity{.ts,.js}'],
         synchronize: true,

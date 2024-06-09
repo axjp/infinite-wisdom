@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoanService } from '../../../service/loan/loan.service';
+import { LoanService } from '../../../service/loan.service';
 
 @Component({
   selector: 'app-loan-list',
