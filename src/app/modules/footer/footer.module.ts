@@ -1,17 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { FooterRoutingModule } from './footer-routing.module';
 import { FooterComponent } from './component/footer.component';
 
-
 @NgModule({
-  declarations: [
-    FooterComponent
-  ],
-  imports: [
-    CommonModule,
-    FooterRoutingModule
-  ]
+  declarations: [FooterComponent],
+  imports: [CommonModule],
+  exports: [FooterComponent]
 })
-export class FooterModule { }
+export class FooterModule {}
