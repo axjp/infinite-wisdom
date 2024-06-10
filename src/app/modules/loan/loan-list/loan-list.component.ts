@@ -15,7 +15,7 @@ export class LoanListComponent implements OnInit {
       loan_date: ['', Validators.required],
       return_date: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
       email: ['', [Validators.required, Validators.email]],
-      state: [{ value: false, disabled: true }]
+      state: [false]
     });
 
     this.loanForm.get('loan_date')?.valueChanges.subscribe(() => this.updateState());
@@ -24,13 +24,28 @@ export class LoanListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  updateState(): void {
-    const loanDate = new Date(this.loanForm.get('loan_date')?.value);
-    const returnDays = this.loanForm.get('return_date')?.value;
+  isReturnDateInvalid(): boolean {
+    const returnDateControl = this.loanForm.get('return_date');
+    return returnDateControl?.invalid && (returnDateControl.dirty || returnDateControl.touched) || false;
+  }
 
-    if (loanDate && returnDays) {
+  validateReturnDays(): void {
+    const returnDateControl = this.loanForm.get('return_date');
+    if (returnDateControl && returnDateControl.value > 10) {
+      returnDateControl.setErrors({ max: true });
+    } else if (returnDateControl) {
+      returnDateControl.setErrors(null);
+    }
+  }
+
+  updateState(): void {
+    const loanDateValue = this.loanForm.get('loan_date')?.value;
+    const returnDaysValue = this.loanForm.get('return_date')?.value;
+
+    if (loanDateValue && returnDaysValue) {
+      const loanDate = new Date(loanDateValue);
       const returnDate = new Date(loanDate);
-      returnDate.setDate(loanDate.getDate() + returnDays);
+      returnDate.setDate(loanDate.getDate() + returnDaysValue);
 
       const currentDate = new Date();
       const isActive = currentDate <= returnDate;
@@ -50,6 +65,7 @@ export class LoanListComponent implements OnInit {
         state: this.loanForm.get('state')?.value
       };
       this.loanService.addLoan(formData);
+      console.log(formData);
     }
   }
 }
