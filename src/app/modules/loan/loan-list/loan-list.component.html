@@ -1,25 +1,35 @@
 <div class="container">
-    <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="loan_date">Loan Date</label>
-        <input type="date" id="loan_date" formControlName="loan_date" class="form-control" />
-      </div>
+  <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="loan_date">Loan Date</label>
+      <input type="date" id="loan_date" formControlName="loan_date" class="form-control" />
+    </div>
 
-      <div class="form-group">
-        <label for="return_date">Return Days</label>
-        <input type="number" id="return_date" formControlName="return_date" class="form-control" min="1" max="10" />
+    <div class="form-group">
+      <label for="return_date">Return Days</label>
+      <input
+        type="number"
+        id="return_date"
+        formControlName="return_date"
+        class="form-control"
+        [ngClass]="{'is-invalid': isReturnDateInvalid()}"
+        (input)="validateReturnDays()"
+      />
+      <div *ngIf="isReturnDateInvalid()" class="invalid-feedback">
+        Maximo 10 dias.
       </div>
+    </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" formControlName="email" class="form-control" />
-      </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control" />
+    </div>
 
-      <div class="form-group">
-        <label for="state">State</label>
-        <input type="checkbox" id="state" formControlName="state" class="form-check-input" [disabled]="true" />
-      </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <!--<input type="checkbox" id="state" formControlName="state" class="form-check-input" [checked]="loanForm.get('state')?.value" disabled /> -->
+    </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
