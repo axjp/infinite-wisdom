@@ -1,27 +1,27 @@
-<div class="reviews">
-  <h2>Create a Review</h2>
+<div>
   <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
     <label for="rating">Rating</label>
-    <input id="rating" formControlName="rating" type="number" min="1" max="5" />
-    <div *ngIf="rating?.invalid && rating?.touched">
-      Rating is required and must be between 1 and 5.
-    </div>
+    <input id="rating" formControlName="rating" type="number" min="1" max="5">
 
     <label for="comment">Comment</label>
     <textarea id="comment" formControlName="comment"></textarea>
-    <div *ngIf="comment?.invalid && comment?.touched">
-      Comment is required.
-    </div>
 
     <label for="is_approved">Is Approved</label>
-    <input id="is_approved" formControlName="is_approved" type="checkbox" />
+    <input id="is_approved" formControlName="is_approved" type="checkbox">
 
-    <label for="idcustomer">Customer ID</label>
-    <input id="idcustomer" formControlName="idcustomer" type="number" />
 
-    <label for="idbooks">Book ID</label>
-    <input id="idbooks" formControlName="idbooks" type="number" />
-
-    <button type="submit" [disabled]="reviewForm.invalid">Submit</button>
+    <button type="submit">Submit</button>
   </form>
+</div>
+
+<div>
+  <h2>Reviews List</h2>
+  <ul>
+    <li *ngFor="let review of reviews">
+      <strong>Rating:</strong> {{ review.rating }}<br>
+      <strong>Comment:</strong> {{ review.comment }}<br>
+      <strong>Approved:</strong> {{ review.is_approved }}<br>
+     
+    </li>
+  </ul>
 </div>

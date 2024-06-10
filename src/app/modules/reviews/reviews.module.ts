@@ -4,9 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ReviewsComponent } from './component/reviews.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 import { ReviewsRoutingModule } from './reviews-routing.module';
-import { ReviewsService } from '../../service/reviews.service';
-import { AppComponent } from '../../app.component';
-
+import { ReviewService } from '../../service/reviews.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +16,6 @@ import { AppComponent } from '../../app.component';
     ReactiveFormsModule,
     ReviewsRoutingModule
   ],
-  providers: [ReviewsService]
+  providers: [ReviewService]
 })
 export class ReviewsModule { }

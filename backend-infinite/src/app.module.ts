@@ -15,6 +15,7 @@ import { DownloadModule } from './modules/download/dowload.module';
 
 @Module({
   imports: [
+
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',

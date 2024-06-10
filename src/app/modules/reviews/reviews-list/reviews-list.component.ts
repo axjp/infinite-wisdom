@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ReviewsService } from '../../../service/reviews.service';
+import { ReviewService } from '../../../service/reviews.service';
 
 @Component({
   selector: 'app-reviews-list',
@@ -10,15 +10,19 @@ import { ReviewsService } from '../../../service/reviews.service';
 export class ReviewsListComponent implements OnInit {
   reviews: any[] = [];
 
-  constructor(private ReviewsService: ReviewsService) { }
+  constructor(private ReviewService: ReviewService) { }
 
   ngOnInit(): void {
-    this.ReviewsService.getReviews().subscribe(
-      data => {
+    this.loadReviews();
+  }
+
+  loadReviews(): void {
+    this.ReviewService.getReviews().subscribe(
+      (data) => {
         this.reviews = data;
       },
-      error => {
-        console.error('Error fetching reviews', error);
+      (error) => {
+        console.error('Error fetching reviews:', error);
       }
     );
   }
