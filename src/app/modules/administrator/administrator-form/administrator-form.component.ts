@@ -49,26 +49,5 @@ booleanoField: any;
 }
 
 
-/*get nameField(): AbstractControl {
-  return this.form.controls['name'];
-}
-
-get lastnameField(): AbstractControl {
-  return this.form.controls['lastname'];
-}
-
-get numberField(): AbstractControl {
-  return this.form.controls['number'];
-}
-
-get birthdateField(): AbstractControl {
-  return this.form.controls['birthdate'];
-}
-
-get booleanoField(): AbstractControl {
-  return this.form.controls['booleano'];
-}
-*/
-
 
 
