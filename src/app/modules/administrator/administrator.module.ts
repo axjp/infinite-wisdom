@@ -11,8 +11,7 @@ import { AdministratorListComponent } from './administrator-list/administrator-l
 @NgModule({
   declarations: [
     AdministratorFormComponent,
-    AdministratorListComponent,
-  
+   AdministratorListComponent
   ],
   imports: [
     CommonModule,

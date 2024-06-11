@@ -2,6 +2,7 @@ import {EnvironmentInjector, inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import { AdministratorI } from "../models/administrator.interface";
 import { Observable } from "rxjs";
+import { environment } from "../../environments/environment";
 
 @Injectable({providedIn:'root'})
 export class AdministratorService{

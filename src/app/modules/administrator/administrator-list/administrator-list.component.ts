@@ -1,16 +1,16 @@
 import { Component,inject } from '@angular/core';
-import {AdministratorService} from "../../../service/administrator.service";
-import {AdministratorI} from "../../../models/administrator.interface";
+import { AdministratorService } from '../../../service/administrator.service';
+import { AdministratorI } from '../../../models/administrator.interface';
+
 @Component({
   selector: 'app-administrator-list',
   templateUrl: './administrator-list.component.html',
   styleUrl: './administrator-list.component.scss'
 })
 export class AdministratorListComponent {
-private readonly administrator = inject(AdministratorService);
+private readonly administratorService = inject(AdministratorService);
 protected administrators: AdministratorI[]=[];
 protected administrator: AdministratorI={};
-protected administrator2: any=null;
 
 constructor(){
   this.findAdministrator();
