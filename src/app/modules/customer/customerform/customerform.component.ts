@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute} from '@angular/router';
-import { CustomersService } from '../../../service/customers.service';
+//import { CustomersService } from '../../../service/customers.service';
+import { CustomersService } from '../../../service/customer.service';
+
 
 @Component({
   selector: 'app-customerform',
@@ -17,11 +19,11 @@ export class CustomerformComponent implements OnInit {
   genders: any = [];
   cellphone: number | undefined;
   accept: boolean = false;
-  
+
   constructor(private formBuilder: FormBuilder,
     private httpClient: HttpClient,
     private route: ActivatedRoute,
-    private customersService: CustomersService
+    private CustomersService: CustomersService
   ) {
     this.customerform = this.formBuilder.group(
       {
@@ -38,7 +40,7 @@ export class CustomerformComponent implements OnInit {
 
     );
 
-   
+
   }
   ngOnInit(): void {}
 
@@ -75,7 +77,7 @@ export class CustomerformComponent implements OnInit {
 
   onSubmit(): void {
     if (this.customerform.valid) {
-      this.customersService.createCustomer(this.customerform.value).subscribe(
+      this.CustomersService.createCustomer(this.customerform.value).subscribe(
         response => {
           console.log('Customer created successfully!', response);
         },
