@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule as NgCommonModule} from '@angular/common';
 
 import { CommonRoutingModule } from './common-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -10,7 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    CommonModule,
+    NgCommonModule,
     CommonRoutingModule
   ]
 })

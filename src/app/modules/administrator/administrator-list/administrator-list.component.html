@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">APELLIDO</th>
+      <th scope="col"># CELULAR</th>
+      <th scope="col">FECHA DE CUMPLE AÑOS</th>
+      <th scope="col">ELIMINAR</th>
+      <th scope="col">ACTUALIZAR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.lastname }}</td>
+        <td>{{ item.number }}</td>
+        <td>{{ item.birthdate}}</td>
+        <td>{{ item.state}}</td>
+        <td><button pButton icon="pi pi-trash"></button></td>
+        <td><button class="btn btn-danger" (click)="deleteAdministrator()">Eliminar</button></td>
+        <td><button class="btn btn-danger" (click)="updateAdministrator()">Actualizar</button></td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>

@@ -1,0 +1,71 @@
+<div class="container d-flex align-items-center justify-content-center">
+  <div class="col col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <img src="assets\img\logo.png" alt="Logo Sabiduria Infinita">
+        <div class="form-group">
+          <form [formGroup]="form">
+            <h2>Registro Administrador</h2>
+            <div>
+              <label for="name" class="form-label">Nombre:</label>
+              <input type="text" class="form-control" id="name" formControlName="name">
+              @if (nameField.errors && nameField.touched){
+              @if(nameField.errors['required']){
+              <span>*El Campo Nombre es requerido</span>
+              }
+              @if(nameField.errors['miniength']){
+
+              }
+              }
+            </div>
+            <div>
+              <label for="lastname" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="lastname" formControlName="lastname">
+              @if (nameField.errors && nameField.touched){
+              @if(nameField.errors['required']){
+              <span>*El Campo Apellido es requerido</span>
+              }
+
+              @if(nameField.errors['miniengt']){
+              <span>*El nombre debe tener entre 4 y 50 caracteres.</span>
+              }
+              }
+            </div>
+            <div>
+              <label for="number" class="form-label">Numero de Celular:</label>
+              <input type="number" class="form-control" id="number" formControlName="number">
+              @if (numberField.errors && numberField.touched) {
+              @if (numberField.errors['required']) {
+              <span>*Numero de Celular Obligatorio</span>
+              }
+              }
+            </div>
+            <div>
+              <label for="birthdate" class="form-label">Fecha de Nacimiento:</label>
+              <input type="date" class="form-control" id="birthdate" formControlName="birthdate">
+              @if (birthdateField.errors && birthdateField.touched) {
+              @if (birthdateField.errors['required']) {
+              <span>*Fecha de nacimineto Obligatorio</span>
+              }
+              }
+            </div>
+            <div>
+              <label for="booleano">Acepta Terminos y Condiciones</label>
+              <input type="checkbox" id="booleano" formControlName="booleano">
+              @if (booleanoField.errors && booleanoField.touched) {
+              @if (booleanoField.errors['required']) {
+              <span>*Aceptar los Terminos </span>
+              }
+              }
+            </div>
+            <br>
+            <button type="button" (click)="validateForm()">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>   
+
+
+

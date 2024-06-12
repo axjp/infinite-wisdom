@@ -11,7 +11,7 @@ export class LoanComponent implements OnInit {
   loans$: Observable<any[]>;
 
   constructor(private loanService: LoanService) {
-    this.loans$ = this.loanService.loans$;
+    this.loans$ = this.loanService.getLoans();
   }
 
   ngOnInit(): void {}
