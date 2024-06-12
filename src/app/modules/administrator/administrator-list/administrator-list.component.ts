@@ -19,6 +19,7 @@ constructor(){
 
 findAdministrators(){
   this.administratorService.findAdministrators().subscribe(response=>{
+    this.administrators = response;
     console.log(this.administrators);
   });
 }

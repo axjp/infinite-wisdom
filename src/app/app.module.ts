@@ -28,16 +28,11 @@ import { InfobookModule } from './modules/infobook/infobook.module';
 import { ReviewsModule } from './modules/reviews/reviews.module';
 import { LoanModule } from './modules/loan/loan.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
-import { AdministratorListComponent } from './modules/administrator/administrator-list/administrator-list.component';
+import { AdministratorModule } from './modules/administrator/administrator.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
-    AdministratorListComponent
   ],
 
   imports: [
@@ -58,7 +53,8 @@ import { AdministratorListComponent } from './modules/administrator/administrato
     ReviewsModule,
     NgbModule,
     LoanModule,
-    FooterModule
+    FooterModule,
+    AdministratorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
