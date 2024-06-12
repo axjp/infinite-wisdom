@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { AbstractControl,FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-administrator-form',
@@ -10,26 +10,28 @@ import { Router } from '@angular/router';
 export class AdministratorFormComponent {
   private formBuilder: FormBuilder = inject(FormBuilder);
 
-  protected nameControl: FormControl = new FormControl<string>('');
-  protected lastnameControl: FormControl = new FormControl<string>('');
-  protected numberControl: FormControl = new FormControl<string>('');
-  protected birthdayControl: FormControl = new FormControl<string>('');
-  protected stateControl: FormControl = new FormControl<string>('');
+  //protected nameControl: FormControl = new FormControl<string>('');
+  //protected lastnameControl: FormControl = new FormControl<string>('');
+  //protected numberControl: FormControl = new FormControl<number>('');
+  //protected birthdayControl: FormControl = new FormControl<date>('');
+  //protected stateControl: FormControl = new FormControl<boolean>('');
 
   protected form: FormGroup;
-  numberField: any;
+
   nameField: any;
+  lastNameField:any;
+  numberField: any;
   birthdateField: any;
   booleanoField: any;
 
-  constructor(private router: Router) {
-    this.form = this.buildForm;
+  constructor() {
+    this.form = this.buildForm();
   }
 
-  get buildForm(): FormGroup {
+  private buildForm(): FormGroup {
     return this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
-      lastname: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      lastName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
       number: [null, [Validators.min(1), Validators.required]],
       birthdate: [[], [Validators.required]],
       booleano: [false, Validators.requiredTrue]

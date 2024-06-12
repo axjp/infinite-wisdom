@@ -14,19 +14,19 @@
               <span>*El Campo Nombre es requerido</span>
               }
               @if(nameField.errors['miniength']){
-
+                <span>El campo name debe contener al menos 2 caracteres</span>
               }
               }
             </div>
             <div>
               <label for="lastname" class="form-label">Apellido</label>
               <input type="text" class="form-control" id="lastname" formControlName="lastname">
-              @if (nameField.errors && nameField.touched){
-              @if(nameField.errors['required']){
+              @if (lastNameField.errors && lastNameField.touched){
+              @if(lastNameField.errors['required']){
               <span>*El Campo Apellido es requerido</span>
               }
 
-              @if(nameField.errors['miniengt']){
+              @if(lastNameField.errors['miniengt']){
               <span>*El nombre debe tener entre 4 y 50 caracteres.</span>
               }
               }
