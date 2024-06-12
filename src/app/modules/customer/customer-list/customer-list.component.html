@@ -1,0 +1,13 @@
+<div class="reviews-list">
+    <h2>Customer List</h2>
+    <ul>
+      <li *ngFor="let customerform of customerforms">
+        <p><strong>Nombre:</strong> {{ customerform.name }}</p>
+        <p><strong>Apellido:</strong> {{ customerform.comment }}</p>
+        <p><strong>Approved:</strong> {{ customerform.is_approved }}</p>
+        <p><strong>Customer ID:</strong> {{ customerform.idcustomer }}</p>
+        <p><strong>Book ID:</strong> {{ customerform.idbooks }}</p>
+      </li>
+    </ul>
+  </div>
+  
