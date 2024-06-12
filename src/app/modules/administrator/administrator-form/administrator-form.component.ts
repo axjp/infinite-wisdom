@@ -10,20 +10,20 @@ import { Router } from '@angular/router';
 export class AdministratorFormComponent {
   private formBuilder: FormBuilder = inject(FormBuilder);
 
-  protected nameControl:FormControl=new FormControl<string>('');
-  protected lastnameControl:FormControl=new FormControl<string>('');
-  protected numberControl:FormControl=new FormControl<string>('');
-  protected birthdayControl:FormControl=new FormControl<string>('');
-  protected stateControl:FormControl=new FormControl<string>('');
-   
-  protected form: FormGroup;
-numberField: any;
-nameField: any;
-birthdateField: any;
-booleanoField: any;
+  protected nameControl: FormControl = new FormControl<string>('');
+  protected lastnameControl: FormControl = new FormControl<string>('');
+  protected numberControl: FormControl = new FormControl<string>('');
+  protected birthdayControl: FormControl = new FormControl<string>('');
+  protected stateControl: FormControl = new FormControl<string>('');
 
-  constructor(private router: Router) { 
-    this.form=this.buildForm;
+  protected form: FormGroup;
+  numberField: any;
+  nameField: any;
+  birthdateField: any;
+  booleanoField: any;
+
+  constructor(private router: Router) {
+    this.form = this.buildForm;
   }
 
   get buildForm(): FormGroup {
@@ -35,18 +35,18 @@ booleanoField: any;
       booleano: [false, Validators.requiredTrue]
     });
   }
- 
+
   validateForm(): void {
     if (this.form.valid) {
       alert('Valido');
     } else {
       alert('No Valido');
     }
-    
+
   }
   onSubmit() {
     console.log(this.form.value);
-}
+  }
 }
 
 

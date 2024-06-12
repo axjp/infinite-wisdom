@@ -39,8 +39,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
   imports: [
     CommonModule,
-    AppRoutingModule,
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

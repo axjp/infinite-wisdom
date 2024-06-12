@@ -1,7 +1,7 @@
 import { Component,inject } from '@angular/core';
 import { AdministratorService } from '../../../service/administrator.service';
 import { AdministratorI } from '../../../models/administrator.interface';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-administrator-list',
@@ -13,11 +13,11 @@ private readonly administratorService = inject(AdministratorService);
 protected administrators: AdministratorI[]=[];
 protected administrator: AdministratorI={};
 
-constructor(private router: Router){
-  this.findAdministrator();
+constructor(){
+  this.findAdministrators();
 }
 
-findAdministrator(){
+findAdministrators(){
   this.administratorService.findAdministrators().subscribe(response=>{
     console.log(this.administrators);
   });

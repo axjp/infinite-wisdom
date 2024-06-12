@@ -13,7 +13,7 @@ const routes: Routes = [
     component:AdministratorFormComponent
   },
   
-];
+];  
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
