@@ -3,10 +3,13 @@
     <ul>
       <li *ngFor="let customerform of customerforms">
         <p><strong>Nombre:</strong> {{ customerform.name }}</p>
-        <p><strong>Apellido:</strong> {{ customerform.comment }}</p>
-        <p><strong>Approved:</strong> {{ customerform.is_approved }}</p>
-        <p><strong>Customer ID:</strong> {{ customerform.idcustomer }}</p>
-        <p><strong>Book ID:</strong> {{ customerform.idbooks }}</p>
+        <p><strong>Apellido:</strong> {{ customerform.lastname }}</p>
+        <p><strong>Email:</strong> {{ customerform.email }}</p>
+        <p><strong>Password:</strong> {{ customerform.password }}</p>
+        <p><strong>Birthdate:</strong> {{ customerform.birthdate }}</p>
+        <p><strong>Gender:</strong> {{ customerform.idgender }}</p>
+        <p><strong>City:</strong> {{ customerform.idcity }}</p>
+        <p><strong>Cellphone:</strong> {{ customerform.cellphone}}</p>
       </li>
     </ul>
   </div>
