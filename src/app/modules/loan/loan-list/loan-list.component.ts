@@ -64,7 +64,9 @@ export class LoanListComponent implements OnInit {
         email: this.loanForm.get('email')?.value,
         state: this.loanForm.get('state')?.value
       };
-      this.loanService.addLoan(formData);
+      this.loanService.addLoan(formData).subscribe(() => {
+        // Handle successful add
+      });
       console.log(formData);
     }
   }

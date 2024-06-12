@@ -30,15 +30,11 @@ import { LoanModule } from './modules/loan/loan.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdministratorListComponent } from './modules/administrator/administrator-list/administrator-list.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     AdministratorListComponent
-
-],
-
+  ],
   imports: [
     CommonModule,
     AppRoutingModule,
@@ -57,8 +53,9 @@ import { AdministratorListComponent } from './modules/administrator/administrato
     ReviewsModule,
     NgbModule,
     LoanModule,
-  FooterModule  ],
-  providers:[],
-  bootstrap:[AppComponent]
+    FooterModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
