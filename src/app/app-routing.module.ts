@@ -14,6 +14,10 @@ import { ReviewsListComponent } from './modules/reviews/reviews-list/reviews-lis
 import { LoanComponent } from './modules/loan/component/loan.component';
 
 const routes: Routes = [
+  {
+    path: 'book',
+    loadChildren: () => import('./modules/book/book.module').then(m => m.BookModule),
+  },
   { path: '', component: MainComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register/:idcustomer', component: RegisterComponent },
