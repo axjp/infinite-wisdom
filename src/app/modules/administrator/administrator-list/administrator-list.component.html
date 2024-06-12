@@ -1,4 +1,3 @@
-<p-table [value]="administrators">
     <ng-template pTemplate="header">
         <tr>
         <th scope="col">ID</th>
@@ -18,7 +17,6 @@
         <td>{{  item.birthdate}}</td>
         <td>{{  item.state}}</td>
         <td><button pButton icon="pi pi-trash"></button></td>
-        <td><button class="btn btn-danger" (click)="delete(administrator.idadministrator)">Eliminar</button></td>
-        <td><button class="btn btn-danger" (click)="update(administrator.idadministrator)">Actualizar</button></td>
+        <td><button class="btn btn-danger" (click)="deleteAdministrator()">Eliminar</button></td>
+        <td><button class="btn btn-danger" (click)="updateAdministrator()">Actualizar</button></td>
       </tr>
-  </table>

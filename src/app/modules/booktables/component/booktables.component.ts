@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-
-
-
 @Component({
   selector: 'app-booktables',
   templateUrl: './booktables.component.html',
@@ -14,12 +11,10 @@ import { Router } from '@angular/router';
 export class BooktablesComponent {
 books: any= null;
 
-
   constructor(private httpClient: HttpClient, private router: Router) {
 
     this.getbooks();
   }
-
   getbooks() {
     const url = 'http://localhost:3000/books';
     this.httpClient.get(url).subscribe(response => {

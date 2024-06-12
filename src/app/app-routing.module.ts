@@ -12,6 +12,8 @@ import { InfobookComponent } from './modules/infobook/component/infobook.compone
 import { ReviewsComponent } from './modules/reviews/component/reviews.component';
 import { ReviewsListComponent } from './modules/reviews/reviews-list/reviews-list.component';
 import { LoanComponent } from './modules/loan/component/loan.component';
+import { AdministratorRoutingModule } from './modules/administrator/administrator-routing.module';
+import { CommonRoutingModule } from './common/common-routing.module';
 
 
 const routes: Routes = [
@@ -19,15 +21,26 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register/:idcustomer', component: RegisterComponent },
   { path: 'upload/:idbook', component: UploadComponent },
-  { path:'common', loadChildren:()=>import('./common/common.module').then(m=>CommonModule)},
-  { path: 'usertables', component: UsertablesComponent },
-  { path:'administrator', loadChildren:()=>import('./modules/administrator/administrator.module').then(m=>AdministratorModule)},
   { path: 'booktables', component: BooktablesComponent },
   { path: 'infobook', component: InfobookComponent },
-  { path: 'reviews-list', component: ReviewsListComponent},
-  { path: 'reviews', component: ReviewsComponent},
-  { path: 'loan', component: LoanComponent},
-  { path: '**',redirectTo: 'common/not-found'}
+  { path: 'reviews-list', component: ReviewsListComponent },
+  { path: 'reviews', component: ReviewsComponent },
+  { path: 'loan', component: LoanComponent },
+
+  { 
+    path: '**', redirectTo: 'common/not-found' 
+  },
+  { 
+    path: 'common', 
+    loadChildren: () => import('./common/common.module').then(m =>m.CommonModule) 
+  },
+  { path: 'usertables', component: UsertablesComponent 
+
+  },
+  { 
+    path:'administratot',
+     loadChildren:()=> import('./modules/administrator/administrator.module').then(m=>m.AdministratorModule)
+  },
 ];
 
 @NgModule({

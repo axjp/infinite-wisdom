@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-administrator-form',
@@ -21,7 +22,7 @@ nameField: any;
 birthdateField: any;
 booleanoField: any;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.form=this.buildForm;
   }
 

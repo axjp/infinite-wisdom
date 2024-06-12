@@ -5,15 +5,14 @@ import { AdministratorListComponent } from './administrator-list/administrator-l
 
 const routes: Routes = [
   {
-    path:'',
+    path:'list',
     component:AdministratorListComponent
   },
   {
-    path:'form/:id',
+    path:'form',
     component:AdministratorFormComponent
   },
   
-
 ];
 
 @NgModule({
