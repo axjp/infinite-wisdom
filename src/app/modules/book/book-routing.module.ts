@@ -9,7 +9,7 @@ const routes: Routes = [
     component: BookFormComponent
   },
   {
-    path: 'list',
+    path: '',
     component: BookListComponent
   }
 ];

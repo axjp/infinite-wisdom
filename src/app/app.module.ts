@@ -54,7 +54,7 @@ import { AdministratorModule } from './modules/administrator/administrator.modul
     NgbModule,
     LoanModule,
     FooterModule,
-    AdministratorModule
+    AdministratorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
