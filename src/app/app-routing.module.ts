@@ -31,8 +31,11 @@ const routes: Routes = [
     loadChildren: () => import('./common/common.module').then(m => m.CommonModule) 
   },
   {
-    path: 'administrator',
+    path: 'administrators',
     loadChildren: () => import('./modules/administrator/administrator.module').then(m => m.AdministratorModule),
+  },
+  {path: 'customer',
+   loadChildren: ()=> import('./modules/customer/customer.module').then(m => m.CustomerModule)
   },
   { 
     path: '**', redirectTo: 'common/not-found' 

@@ -1,27 +1,26 @@
-<table class="table">
+<table class="table table-dark table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">CORREO</th>
       <th scope="col">NOMBRE</th>
       <th scope="col">APELLIDO</th>
       <th scope="col"># CELULAR</th>
       <th scope="col">FECHA DE CUMPLE AÑOS</th>
-      <th scope="col">ELIMINAR</th>
       <th scope="col">ACTUALIZAR</th>
+      <th scope="col">ELIMINAR</th>
     </tr>
   </thead>
+  @for (administrator of administrators; track administrator.name; let i = $index) {
   <tbody>
-    <ng-template pTemplate="body" let-item>
       <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.lastname }}</td>
-        <td>{{ item.number }}</td>
-        <td>{{ item.birthdate}}</td>
-        <td>{{ item.state}}</td>
-        <td><button pButton icon="pi pi-trash"></button></td>
+      <td class="table-dark">{{ administrator.email }}</td>
+      <td class="table-dark">{{ administrator.name }}</td>
+      <td class="table-dark">{{ administrator.lastName }}</td>
+      <td class="table-dark">{{ administrator.cellphone }}</td>
+      <td class="table-dark">{{ administrator.birthday | date }}</td>
+        <td><button class="btn btn-warning" (click)="updateAdministrator()">Actualizar</button></td>
         <td><button class="btn btn-danger" (click)="deleteAdministrator()">Eliminar</button></td>
-        <td><button class="btn btn-danger" (click)="updateAdministrator()">Actualizar</button></td>
       </tr>
-    </ng-template>
   </tbody>
+}
 </table>

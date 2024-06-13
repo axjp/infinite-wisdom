@@ -1,7 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-
+import { Component, inject, } from '@angular/core';
+import { AbstractControl,FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+ 
 @Component({
   selector: 'app-administrator-form',
   templateUrl: './administrator-form.component.html',
@@ -9,29 +8,37 @@ import { Router } from '@angular/router';
 })
 export class AdministratorFormComponent {
   private formBuilder: FormBuilder = inject(FormBuilder);
+  
 
-  protected nameControl: FormControl = new FormControl<string>('');
+  /*protected nameControl: FormControl = new FormControl<string>('');
   protected lastnameControl: FormControl = new FormControl<string>('');
   protected numberControl: FormControl = new FormControl<string>('');
   protected birthdayControl: FormControl = new FormControl<string>('');
   protected stateControl: FormControl = new FormControl<string>('');
+  protected emailControl: FormControl = new FormControl<string>('');
+  protected passwordControl: FormControl = new FormControl<string>('');*/
 
   protected form: FormGroup;
-  numberField: any;
+
   nameField: any;
+  lastNameField:any;
+  numberField: any;
   birthdateField: any;
   booleanoField: any;
-
-  constructor(private router: Router) {
-    this.form = this.buildForm;
+  emailField:any;
+  passwordField:any;
+  constructor() {
+    this.form = this.buildForm();
   }
 
-  get buildForm(): FormGroup {
+  private buildForm(): FormGroup {
     return this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
-      lastname: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
-      number: [null, [Validators.min(1), Validators.required]],
-      birthdate: [[], [Validators.required]],
+      lastName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      email:['',[Validators.required,Validators.email]],
+      password:['',[Validators.required, Validators.minLength(6)]],
+      number: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
+      birthdate: ['', [Validators.required]],
       booleano: [false, Validators.requiredTrue]
     });
   }
@@ -39,6 +46,7 @@ export class AdministratorFormComponent {
   validateForm(): void {
     if (this.form.valid) {
       alert('Valido');
+      this.onSubmit();
     } else {
       alert('No Valido');
     }
