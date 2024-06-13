@@ -5,7 +5,7 @@ import { AdministratorListComponent } from './administrator-list/administrator-l
 
 const routes: Routes = [
   {
-    path:'list',
+    path:'',
     component:AdministratorListComponent
   },
   {
