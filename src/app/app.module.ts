@@ -29,6 +29,7 @@ import { ReviewsModule } from './modules/reviews/reviews.module';
 import { LoanModule } from './modules/loan/loan.module';
 import { AdministratorModule } from './modules/administrator/administrator.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomerModule } from './modules/customer/customer.module';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     LoanModule,
     FooterModule,
-    AdministratorModule
+    AdministratorModule,
+    CustomerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

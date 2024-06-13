@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute} from '@angular/router';
 //import { CustomersService } from '../../../service/customers.service';
@@ -12,6 +12,7 @@ import { CustomersService } from '../../../service/customer.service';
   styleUrl: './customerform.component.scss'
 })
 export class CustomerformComponent implements OnInit {
+
   protected customerform: FormGroup;
 
   customer: any = null;
