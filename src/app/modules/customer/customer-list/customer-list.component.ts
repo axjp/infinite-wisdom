@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CustomersService } from '../../../service/customers.service';
+import { CustomersService } from '../../../service/customer.service';
 
 @Component({
   selector: 'app-customer-list',

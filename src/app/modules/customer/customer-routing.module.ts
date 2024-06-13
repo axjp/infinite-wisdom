@@ -4,10 +4,10 @@ import { CustomerformComponent } from './customerform/customerform.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 
 const routes: Routes = [
-  {path:'',
+  {path:'customerForm',
     component: CustomerformComponent
   },
-  {path: '',
+  {path: 'customerList',
     component: CustomerListComponent
   }
 ];
