@@ -13,7 +13,7 @@ import { LoanComponent } from './modules/loan/component/loan.component';
 
 const routes: Routes = [
   {
-    path: 'book',
+    path: 'books',
     loadChildren: () => import('./modules/book/book.module').then(m => m.BookModule),
   },
   { path: '', component: MainComponent },
@@ -31,7 +31,7 @@ const routes: Routes = [
     loadChildren: () => import('./common/common.module').then(m => m.CommonModule) 
   },
   {
-    path: 'administrator',
+    path: 'administrators',
     loadChildren: () => import('./modules/administrator/administrator.module').then(m => m.AdministratorModule),
   },
   {path: 'customer',

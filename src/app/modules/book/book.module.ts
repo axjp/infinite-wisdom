@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {  CommonModule as NgCommonModule } from '@angular/common';
+import {  CommonModule,} from '@angular/common';
 
 import { BookRoutingModule } from './book-routing.module';
 import { BookFormComponent } from './book-form/book-form.component';
@@ -14,7 +14,7 @@ import { BookProductComponent } from './book-product/book-product.component';
     BookProductComponent
   ],
   imports: [
-    NgCommonModule,
+    CommonModule,
     BookRoutingModule
   ]
 })

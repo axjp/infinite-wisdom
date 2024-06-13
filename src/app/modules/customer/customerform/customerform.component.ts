@@ -20,6 +20,7 @@ export class CustomerformComponent implements OnInit {
   genders: any = [];
   cellphone: number | undefined;
   accept: boolean = false;
+form: any;
 
   constructor(private formBuilder: FormBuilder,
     private httpClient: HttpClient,
