@@ -55,7 +55,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     LoanModule,
     FooterModule,
-    AdministratorModule
+    AdministratorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
